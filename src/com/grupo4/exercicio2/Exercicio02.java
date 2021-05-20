@@ -4,8 +4,7 @@ import java.util.*;
 
 public class Exercicio02 {
     public static void main(String[] args) {
-        exercicio01();
-        exercicio03();
+
     }
 
     public static void exercicio01(){
@@ -15,21 +14,6 @@ public class Exercicio02 {
         Arrays.stream(vetor).sorted().forEach(n -> System.out.println(n));
         System.out.println("\n\nOrdem decrescente: ");
         Arrays.stream(vetor).sorted(Comparator.reverseOrder()).forEach(n-> System.out.println(n));
-    }
-
-    public static void exercicio2(){
-        Empresa empresaX = new Empresa();
-        Empresa empresaY = new Empresa();
-
-        empresaX.setNome("EmpresaX");
-        empresaX.setCrescimento(148d);
-        empresaX.setValores(2021, 1.13d);
-
-        empresaY.setNome("EmpresaY");
-        empresaY.setCrescimento(32d);
-        empresaX.setValores(2021, 18.4d);
-        
-
     }
 
 
