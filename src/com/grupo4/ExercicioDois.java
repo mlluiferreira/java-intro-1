@@ -2,7 +2,7 @@ package com.grupo4;
 
 import java.util.Scanner;
 
-public class Exercicio02 implements Activity {
+public class ExercicioDois implements Activity {
 //    Desenvolva um programa para mostrar os primeiros n números múltiplos de m, sendo n e m valores que o
 //    usuário irá inserir via console. Lembre-se que um número a é divisível por b se a é divisível por b.
     @Override
