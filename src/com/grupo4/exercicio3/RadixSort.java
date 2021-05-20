@@ -16,13 +16,13 @@ public class RadixSort {
 
     private static int[] radixSort(int[] iArr) {
         String sArr[] = fromIntArrayToStingArray(iArr);
-        int tamanho = retornaMaiorTamanho(iArr);
-        sArr = addPaddingZero(sArr, tamanho);
-        for(int i = tamanho; i > 0; i--) {
-            sArr = ordenarListaPorPosicao(sArr, i-1);
+        int length = returnBiggerValue(iArr);
+        sArr = addPaddingZero(sArr, length);
+        for(int i = length; i > 0; i--) {
+            sArr = orderListByPosition(sArr, i-1);
         }
 
-        return converteArray(sArr);
+        return fromStringArrayToIntArray(sArr);
     }
 
     private static String[] fromIntArrayToStingArray(int[] iArr){
@@ -36,7 +36,7 @@ public class RadixSort {
     }
 
 
-    private static int[] converteArray(String[] sArr){
+    private static int[] fromStringArrayToIntArray(String[] sArr){
         int iArr[] = new int[sArr.length];
         for (int i=0; i<sArr.length; i++){
             iArr[i] = Integer.parseInt(sArr[i]);
@@ -44,7 +44,7 @@ public class RadixSort {
         return iArr;
     }
 
-    private static int retornaMaiorTamanho(int[] iArr){
+    private static int returnBiggerValue(int[] iArr){
         int numero = iArr[0];
         for(int i = 1;  i < iArr.length ; i++){
             if(numero < iArr[i]){
@@ -67,7 +67,7 @@ public class RadixSort {
         return sArr;
     }
 
-    private static String[] ordenarListaPorPosicao(String[] sArr, int posicao){
+    private static String[] orderListByPosition(String[] sArr, int position){
         List<String> l0 = new ArrayList<String>();
         List<String> l1 = new ArrayList<String>();
         List<String> l2 = new ArrayList<String>();
@@ -80,45 +80,45 @@ public class RadixSort {
         List<String> l9 = new ArrayList<String>();
 
         for (int i = 0; i< sArr.length; i++){
-            char ultimoDigito = sArr[i].charAt(posicao);
+            char lastDigit = sArr[i].charAt(position);
 
-            if(ultimoDigito == '0'){
+            if(lastDigit == '0'){
                 l0.add(sArr[i]);
-            }else if(ultimoDigito == '1'){
+            }else if(lastDigit == '1'){
                 l1.add(sArr[i]);
-            }else if(ultimoDigito == '2'){
+            }else if(lastDigit == '2'){
                 l2.add(sArr[i]);
-            }else if(ultimoDigito == '3'){
+            }else if(lastDigit == '3'){
                 l3.add(sArr[i]);
-            }else if(ultimoDigito == '4'){
+            }else if(lastDigit == '4'){
                 l4.add(sArr[i]);
-            }else if(ultimoDigito == '5'){
+            }else if(lastDigit == '5'){
                 l5.add(sArr[i]);
-            }else if(ultimoDigito == '6'){
+            }else if(lastDigit == '6'){
                 l6.add(sArr[i]);
-            }else if(ultimoDigito == '7'){
+            }else if(lastDigit == '7'){
                 l7.add(sArr[i]);
-            }else if(ultimoDigito == '8'){
+            }else if(lastDigit == '8'){
                 l8.add(sArr[i]);
-            }else if(ultimoDigito == '9'){
+            }else if(lastDigit == '9'){
                 l9.add(sArr[i]);
             }
         }
 
-        List<String> listaFinal = new ArrayList<>();
-        listaFinal.addAll(l0);
-        listaFinal.addAll(l1);
-        listaFinal.addAll(l2);
-        listaFinal.addAll(l3);
-        listaFinal.addAll(l4);
-        listaFinal.addAll(l5);
-        listaFinal.addAll(l6);
-        listaFinal.addAll(l7);
-        listaFinal.addAll(l8);
-        listaFinal.addAll(l9);
+        List<String> listFinal = new ArrayList<>();
+        listFinal.addAll(l0);
+        listFinal.addAll(l1);
+        listFinal.addAll(l2);
+        listFinal.addAll(l3);
+        listFinal.addAll(l4);
+        listFinal.addAll(l5);
+        listFinal.addAll(l6);
+        listFinal.addAll(l7);
+        listFinal.addAll(l8);
+        listFinal.addAll(l9);
 
-        return listaFinal.stream().toArray(String[]::new);
+        return listFinal.stream().toArray(String[]::new);
     }
 
 
-    }
+}
