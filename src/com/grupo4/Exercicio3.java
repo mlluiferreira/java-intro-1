@@ -8,16 +8,16 @@ public class Exercicio3 implements Activity{
         Scanner entrada = new Scanner(System.in);
 
         int num = entrada.nextInt();
-        int cont = 0;
+        Boolean cont = false;
 
         for(int i = 2; i < num; i++){
             if(num % i == 0) {
-                cont++;
+                cont = true;
                 break;
             }
         }
 
-        if(cont > 0) {
+        if(cont) {
             System.out.printf("Nao é primo");
         }else {
             System.out.printf("É primo");
